@@ -124,7 +124,6 @@ When executing the above command, a series of queries will be made to the animal
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Update animals table
 - Query multiple tables.
 - Add "join table" for visits
 
