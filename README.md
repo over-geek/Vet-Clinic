@@ -72,53 +72,42 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+In order to run this project, you must have installed and configured the following tools in your local environment:
 
-```sh
- install PostgreSQL
-```
+- [ ] PostgreSQL
 
 ### Setup
 
-Clone this repository to your desired folder:
+**You must ensure that you have the postgreSQL installed and the server is started before continuing.**
+
+First clone this repository to your desired folder:
 
 ```sh
   git clone https://github.com/over-geek/Vet-Clinic.git
-  cd Vet-Clinic
 ```
 
-### Install
-
-Install this project with:
-
-```sh
-  cd my-project
-  gem install
-```
+Now, you need to create a database called **vet_clinic**.
 
 ### Usage
 
-To run the project, execute the following command:
+In the command line, execute the following commands one by one in the same order as below:
+
+Note: On all commands, you must replace the `username` with your database's username and `path/to/the/project-folder/` with the path to the project folder in your local environment.
 
 ```sh
-  rails server
+  psql -U username -d vet_clinic -f path/to/the/project-folder/schema.sql;
 ```
-
-### Run tests
-
-To run tests, run the following command:
+Running the above command will create a table named **animals** within it.
 
 ```sh
-  bin/rails test test/models/article_test.rb
+  psql -U username -d vet_clinic -f path/to/the/project-folder/data.sql
 ```
-
-### Deployment
-
-You can deploy this project using:
+Running the above command will insert four new records into the animals table.
 
 ```sh
-
+  psql -U username -d vet_clinic -f path/to/the/project-folder/queries.sql
 ```
+When executing the above command, a series of queries will be made to the animals table.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,7 +147,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project...
+If you liked this project, give me a "Star" (clicking the star button at the beginning of this page), share this repo with your developer community or make your contributions.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
