@@ -51,3 +51,261 @@ WHERE name = 'Charmander' OR name = 'Squirtle' OR name = 'Blossom';
 UPDATE animals
 SET owner_id = (SELECT id FROM owners WHERE full_name = 'Dean Winchester')
 WHERE name = 'Angemon' OR name = 'Boarmon;
+
+-- Insert data into vets --
+
+INSERT INTO vets (name, age, date_of_graduation)
+VALUES ('William Tatcher', 45, 'Apr 23, 2000'),
+('Maisy Smith', 26, 'Jan 17, 2019'),
+('Stephanie Mendez', 64, 'May 14, 1981'),
+('Jack Harness', 38, 'Jun 8, 2008');
+
+-- Insert data into specializations
+
+INSERT INTO specializations (vet_id, species_id)
+VALUES (1, 1), (3, 2), (3, 1), (4, 2);
+
+-- Insert data into visits
+
+INSERT INTO visits (animal_id, vet_id, visit_date)
+VALUES (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Agumon'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'William Tatcher'
+          LIMIT 1
+      ), '2020-05-24'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Agumon'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Stephanie Mendez'
+          LIMIT 1
+      ), '2020-07-22'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Gabumon'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Jack Harkness'
+          LIMIT 1
+      ), '2021-02-02'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Pikachu'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Maisy Smith'
+          LIMIT 1
+      ), '2020-01-05'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Pikachu'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Maisy Smith'
+          LIMIT 1
+      ), '2020-03-08'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Pikachu'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Maisy Smith'
+          LIMIT 1
+      ), '2020-05-14'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Devimon'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Stephanie Mendez'
+          LIMIT 1
+      ), '2021-05-04'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Charmander'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Jack Harkness'
+          LIMIT 1
+      ), '2021-02-24'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Plantmon'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Maisy Smith'
+          LIMIT 1
+      ), '2019-12-21'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Plantmon'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'William Tatcher'
+          LIMIT 1
+      ), '2020-08-10'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Plantmon'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Maisy Smith'
+          LIMIT 1
+      ), '2021-04-07'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Squirtle'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Stephanie Mendez'
+          LIMIT 1
+      ), '2019-09-29'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Angemon'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Jack Harkness'
+          LIMIT 1
+      ), '2020-10-03'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Angemon'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Jack Harkness'
+          LIMIT 1
+      ), '2020-11-04'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Boarmon'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Maisy Smith'
+          LIMIT 1
+      ), '2019-01-24'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Boarmon'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Maisy Smith'
+          LIMIT 1
+      ), '2019-05-15'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Boarmon'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Maisy Smith'
+          LIMIT 1
+      ), '2020-02-27'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Boarmon'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Maisy Smith'
+          LIMIT 1
+      ), '2020-08-03'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Blossom'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'Stephanie Mendez'
+          LIMIT 1
+      ), '2020-05-24'
+  ), (
+      (
+        SELECT id
+        FROM animals
+        WHERE name = 'Blossom'
+        LIMIT 1
+      ), (
+          SELECT id
+          FROM vets
+          WHERE name = 'William Tatcher'
+          LIMIT 1
+      ), '2021-01-11'
+  );
