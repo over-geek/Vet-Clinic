@@ -1,13 +1,12 @@
 /* Database schema to keep the structure of entire database. */
 
 CREATE TABLE animals (
-    id bigserial not null,
+    id bigserial primary key,
     name varchar(100) not null,
     date_of_birth date,
     escape_attempts int not null,
     neutered boolean,
-    weight_kg decimal not null,
-    primary key(id)
+    weight_kg decimal not null
 );
 
 ALTER TABLE animals ADD COLUMN species VARCHAR;
@@ -30,3 +29,25 @@ ALTER TABLE animals ADD CONSTRAINT foreign_key_species FOREIGN KEY (species_id) 
 
 ALTER TABLE animals ADD COLUMN owner_id int;
 ALTER TABLE animals ADD CONSTRAINT foreign_key_owners FOREIGN KEY (owner_id) REFERENCES owners(id);
+
+CREATE TABLE vets (
+    id BIGSERIAL PRIMARY KEY,
+    name varchar,
+    age int,
+    date_of_graduation DATE
+);
+
+CREATE TABLE specializations(
+    vet_id INT REFERENCES vets(id),
+    species_id INT REFERENCES species(id),
+    PRIMARY KEY(vet_id, species_id)
+)
+
+CREATE TABLE visits (
+    id BIGSERIAL PRIMARY KEY,
+    animal_id INT,
+    vet_id INT,
+    visit_date DATE,
+    FOREIGN KEY (animal_id) REFERENCES animals(id),
+    FOREIGN KEY (vet_id) REFERENCES vets(id)
+);
