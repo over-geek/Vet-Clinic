@@ -12,3 +12,10 @@ CREATE TABLE IF NOT EXISTS medical_histories (
     patient_id INT REFERENCES patients(id),
     status VARCHAR(255) NOT NULL
 );
+
+-- treatments table create
+CREATE TABLE treatments (
+  id serial PRIMARY KEY,
+  type VARCHAR(255) NOT NULL,
+  name VARCHAR(255) NOT NULL
+);
