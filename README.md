@@ -118,13 +118,19 @@ When executing the above command, a series of queries will be made to the animal
 - Twitter: [@twitterhandle](https://twitter.com/KissiKenneth)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/kenneth-agyare-kissi-673a01186/)
 
+👤 **Henok Mekonnen**
+
+-   GitHub: [@githubhandle](https://github.com/henask12)
+-   Twitter: [@twitterhandle](https://twitter.com/henok_mekonnen3)
+-   LinkedIn: [LinkedIn](https://www.linkedin.com/in/henokmekonnen1)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Add "join table" for visits
+- Database Schema Diagram
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
